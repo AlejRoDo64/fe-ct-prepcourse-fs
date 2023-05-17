@@ -159,7 +159,7 @@ function empiezaConNueve(num) {
   // Tu código:
   numeroString = num + "";
   arreglo = numeroString.split("");
-  if (arreglo[0] == 9) {
+  if (arreglo[0] === "9") {
     return true;
   }
   return false;
@@ -169,14 +169,13 @@ function todosIguales(array) {
   // Si todos los elementos del arreglo son iguales, retornar true.
   // Caso contrario retornar false.
   // Tu código:
+  flag = array[0];
   for (let i = 0; i < array.length; i++) {
-    if (i > 0) {
-      if (array[i] === array[--i]) {
-        return true;
-      }
+    if (array[i] !== flag) {
       return false;
     }
   }
+  return true;
 }
 
 function mesesDelAño(array) {
