@@ -192,9 +192,19 @@ function mesesDelAño(array) {
       array[i] === "Marzo" ||
       array[i] === "Noviembre"
     ) {
-      nuevoArray.unshift(array[i]);
+      nuevoArray.push(array[i]);
     }
   }
+  if (
+    !(
+      nuevoArray.includes("Enero") &&
+      nuevoArray.includes("Marzo") &&
+      nuevoArray.includes("Noviembre")
+    )
+  ) {
+    return "No se encontraron los meses pedidos";
+  }
+  return nuevoArray;
 }
 
 function tablaDelSeis() {
@@ -204,8 +214,9 @@ function tablaDelSeis() {
   var array = [];
   for (let i = 0; i <= 10; i++) {
     const multiplo = 6 * i;
-    array.unshift(multiplo);
+    array.push(multiplo);
   }
+  return array;
 }
 
 function mayorACien(array) {
@@ -216,7 +227,7 @@ function mayorACien(array) {
   for (let i = 0; i < array.length; i++) {
     const element = array[i];
     if (element > 100) {
-      mayoresACien.unshift(element);
+      mayoresACien.push(element);
     }
   }
   return mayoresACien;
@@ -233,6 +244,16 @@ function breakStatement(num) {
   // la ejecución y retornar el string: "Se interrumpió la ejecución".
   // [PISTA]: utiliza el statement 'break'.
   // Tu código:
+  arraySumas = [];
+  for (let i = 0; i < 10; i++) {
+    num += 2;
+    agregado = num;
+    arraySumas[i] = agregado;
+    if (i == agregado) {
+      return "Se interrumpió la ejecución";
+    }
+  }
+  return arraySumas;
 }
 
 function continueStatement(num) {
@@ -242,6 +263,17 @@ function continueStatement(num) {
   // se continua con la siguiente iteración.
   // [PISTA]: utiliza el statement 'continue'.
   // Tu código:
+  arraySumas = [];
+  for (let i = 0; i < 10; i++) {
+    if (i == 5) {
+      continue;
+    } else {
+      num += 2;
+      agregado = num;
+      arraySumas.push(agregado);
+    }
+  }
+  return arraySumas;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
